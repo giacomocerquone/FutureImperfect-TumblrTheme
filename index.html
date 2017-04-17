@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}</title>
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="text:Google Analytics ID" content="">
+    <meta name="text:Google Web Font name" content="">
+    <meta name="color:Link Color" content="#505050">
+    <meta name="if:Show Header Image" content="">
+    <meta name="if:Show Social Links" content="">
+    <meta name="text:Facebook" content="">
+    <meta name="text:Twitter" content="">
+    <meta name="text:Instagram" content="">
+    <meta name="text:Pinterest" content="">
+    <meta name="text:Youtube" content="">
+    <meta name="text:Flickr" content="">
+    <meta name="text:Email" content="">
+
+		<!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+    <style>{CustomCSS}</style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="{BlogURL}">{Title}</a></h1>
+						<nav class="links">
+							<ul>
+                {block:HasPages}
+                  {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+                {/block:HasPages}
+                {block:AskEnabled}
+                  <li><a href="/ask">{AskLabel}</a></li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                  <li><a href="/submit">{SubmitLabel}</a></li>
+                {/block:SubmissionsEnabled}
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+                  {block:HasPages}
+                    {block:Pages}<li><a href="{URL}"><h3>{Label}</h3></a></li>{/block:Pages}
+                  {/block:HasPages}
+                  {block:AskEnabled}
+                    <li><a href="/ask"><h3>{AskLabel}</h3></a></li>
+                  {/block:AskEnabled}
+                  {block:SubmissionsEnabled}
+                    <li><a href="/submit"><h3>{SubmitLabel}</h3></a></li>
+                  {/block:SubmissionsEnabled}
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+            {block:Posts}
+
+              {block:Regular}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-align-right" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               <p>{Body}</p>
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Regular}
+
+
+              {block:Photo}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-camera" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               <a href="#" class="image featured">
+                 <img src="{PhotoURL-500}" alt="{PhotoAlt}" {block:HighRes}style="display:none"{/block:HighRes}/>
+                 {block:HighRes}<img src="{PhotoURL-HighRes}" class="highres" alt="{PhotoAlt}">{/block:HighRes}
+               </a>
+
+               {block:Caption}<p>{Caption}</p>{/block:Caption}
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Photo}
+
+              {block:Photoset}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-camera" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               {Photoset}
+
+               {block:Caption}<p>{Caption}</p>{/block:Caption}
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Photoset}
+
+              {block:Quote}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   <h2>{Source}</h2>
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-quote-right" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               <blockquote>{Quote}</blockquote>
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Quote}
+
+              {block:Audio}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   <h2>{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}</h2>
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-headphones" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               {block:Caption}<p>{Caption}</p>{/block:Caption}
+               <div class="audio-wrapper">{AudioEmbed}</div>
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                   {block:PlayCount}<li>{PlayCount}</li>{/block:PlayCount}
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Audio}
+
+              {block:Video}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   <h2></h2>
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-video-camera" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               {block:Caption}<p>{Caption}</p>{/block:Caption}
+               <div class="video-wrapper">{Video-500}</div>
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                   <li>{PlayCount}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Video}
+
+            {/block:Posts}
+
+
+
+            <!-- Pagination -->
+            {block:Pagination}
+            <ul class="actions pagination">
+             <li>{block:PreviousPage}<a href="{PreviousPage}" class="disabled button big previous">Previous Page</a>{/block:PreviousPage}</li>
+             <li>{CurrentPage} <span>of</span> {TotalPages}</li>
+             <li>{block:NextPage}<a href="{NextPage}" class="button big next">Next Page</a>{/block:NextPage}</li>
+            </ul>
+            {/block:Pagination}
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="{BlogURL}" class="logo"><img src="{PortraitURL-128}" alt="" /></a>
+								<header>
+									<h2>{Title}</h2>
+                  {block:Description}
+                    <p>{Description}</p>
+                  {/block:Description}
+								</header>
+							</section>
+
+						<!-- Footer -->
+							<section id="footer">
+                <!-- Social -->
+                {block:IfShowSocialLinks}
+								<ul class="icons">
+                  {block:IfFacebook}<li><a target="_blank" href="http://facebook.com/{text:Facebook}" class="fa-facebook"><span class="label">Facebook</span></a></li>{/block:IfFacebook}
+									{block:IfTwitter}<li><a target="_blank" href="http://twitter.com/{text:Twitter}" class="fa-twitter"><span class="label">Twitter</span></a></li>{/block:IfTwitter}
+									{block:IfInstagram}<li><a target="_blank" href="http://instagram.com/{text:Instagram}" class="fa-instagram"><span class="label">Instagram</span></a></li>{/block:IfInstagram}
+									{block:IfYoutube}<li><a target="_blank" href="http://youtube.com/{text:Youtube}" class="fa-youtube"><span class="label">Youtube</span></a></li>{/block:IfYoutube}
+									{block:IfFlickr}<li><a target="_blank" href="http://flickr.com/{text:Flickr}" class="fa-flickr"><span class="label">Flickr</span></a></li>{/block:IfFlickr}
+									{block:IfPinterest}<li><a target="_blank" href="http://pinterest.com/{text:Pinterest}" class="fa-pinterest"><span class="label">Pinterest</span></a></li>{/block:IfPinterest}
+                  {block:IfEmail}<li><a href="mailto:{text:Email}" class="fa-envelope"><span class="label">Email</span></a></li>{/block:IfEmail}
+								</ul>
+                {/block:IfShowSocialLinks}
+								<p class="copyright">&copy;{BlogTitle}. <br/>Theme By: <a href="http://giacomocerquone.com">Giacomo Cerquone</a>. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+      <script>
+        $('.video-wrapper, .audio-wrapper').fitVids({ customSelector: "iframe[src*='tumblr.com'], iframe[src='about:blank'], iframe[src*='soundcloud.com']" });
+      </script>
+			<!-- [if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif] -->
+      <script src="js/main.js"></script>
+      <script src="js/util.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "html5up-future-imperfect-tumblrtheme",
+  "version": "1.0.0",
+  "description": "Converted an html5up template into a tumblr theme",
+  "scripts": {
+    "build": "rm dist/index.html && inliner --noimages --inlinemin --skip-absolute-urls index.html >> dist/index.html"
+  },
+  "author": "Giacomo Cerquone",
+  "devDependencies": {
+    "inliner": "^1.12.1"
+  }
+}
