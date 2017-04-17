@@ -115,7 +115,7 @@
                    <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
                  </div>
                </header>
-               <p>{Body}</p>
+               {Body}
                <footer>
                  {block:More}
                  <ul class="actions">
@@ -143,6 +143,46 @@
               {/block:Regular}
 
 
+              {block:Chat}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-comments" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               <p>{block:Lines}<div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>{/block:Lines}</p>
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                   {block:Tags}
+                   <li><a href="{TagURL}">{Tag}</a></li>
+                   {/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{ReblogButton}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Chat}
+
+
               {block:Photo}
               <article class="post">
                <header>
@@ -159,8 +199,7 @@
                  <img src="{PhotoURL-500}" alt="{PhotoAlt}" {block:HighRes}style="display:none"{/block:HighRes}/>
                  {block:HighRes}<img src="{PhotoURL-HighRes}" class="highres" alt="{PhotoAlt}">{/block:HighRes}
                </a>
-
-               {block:Caption}<p>{Caption}</p>{/block:Caption}
+               {block:Caption}{Caption}{/block:Caption}
                <footer>
                  {block:More}
                  <ul class="actions">
@@ -200,8 +239,7 @@
                  </div>
                </header>
                {Photoset}
-
-               {block:Caption}<p>{Caption}</p>{/block:Caption}
+               {block:Caption}{Caption}{/block:Caption}
                <footer>
                  {block:More}
                  <ul class="actions">
@@ -279,8 +317,8 @@
                    <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
                  </div>
                </header>
-               {block:Caption}<p>{Caption}</p>{/block:Caption}
-               <div class="audio-wrapper">{AudioEmbed}</div>
+               {block:Caption}{Caption}{/block:Caption}
+               <p class="audio-wrapper">{AudioEmbed}</p>
                <footer>
                  {block:More}
                  <ul class="actions">
@@ -320,8 +358,8 @@
                    <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
                  </div>
                </header>
-               {block:Caption}<p>{Caption}</p>{/block:Caption}
-               <div class="video-wrapper">{Video-500}</div>
+               {block:Caption}{Caption}{/block:Caption}
+               <p class="video-wrapper">{Video-500}</p>
                <footer>
                  {block:More}
                  <ul class="actions">
