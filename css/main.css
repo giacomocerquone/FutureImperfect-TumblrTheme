@@ -1495,6 +1495,19 @@
 				color: #2ebaae !important;
 			}
 
+  .like_button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .like_count {
+    vertical-align: middle;
+  }
+
+  .reblog_button {
+    border-bottom: none !important;
+  }
+
 	strong, b {
 		color: #3c3b3b;
 		font-weight: 700;
@@ -2686,6 +2699,7 @@
 					margin: 0 0 0 2em;
 					padding: 0 0 0 2em;
 					text-transform: uppercase;
+          vertical-align: middle;
 				}
 
 					.post > footer .stats li:first-child {

@@ -124,20 +124,15 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                  </ul>
                </footer>
                {block:PermalinkPage}
-                 {block:PostNotes}
-                 <div class="notes">
-                     {PostNotes}
-                 </div>
-                 {/block:PostNotes}
+                 {block:PostNotes}<div class="notes">{PostNotes}</div>{/block:PostNotes}
                {/block:PermalinkPage}
               </article>
               {/block:Regular}
@@ -164,19 +159,16 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                  </ul>
                </footer>
                {block:PermalinkPage}
                  {block:PostNotes}
-                 <div class="notes">
-                     {PostNotes}
-                 </div>
+                  <div class="notes">{PostNotes}</div>
                  {/block:PostNotes}
                {/block:PermalinkPage}
               </article>
@@ -195,11 +187,11 @@
                    <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
                  </div>
                </header>
+               {block:Caption}{Caption}{/block:Caption}
                <a href="#" class="image featured">
                  <img src="{PhotoURL-500}" alt="{PhotoAlt}" {block:HighRes}style="display:none"{/block:HighRes}/>
                  {block:HighRes}<img src="{PhotoURL-HighRes}" class="highres" alt="{PhotoAlt}">{/block:HighRes}
                </a>
-               {block:Caption}{Caption}{/block:Caption}
                <footer>
                  {block:More}
                  <ul class="actions">
@@ -208,11 +200,10 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                  </ul>
                </footer>
@@ -238,8 +229,8 @@
                    <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
                  </div>
                </header>
-               {Photoset}
                {block:Caption}{Caption}{/block:Caption}
+               <p>{Photoset}<p>
                <footer>
                  {block:More}
                  <ul class="actions">
@@ -248,11 +239,10 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                  </ul>
                </footer>
@@ -287,11 +277,10 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                  </ul>
                </footer>
@@ -304,6 +293,52 @@
                {/block:PermalinkPage}
               </article>
               {/block:Quote}
+
+
+              {block:Link}
+              <article class="post">
+               <header>
+                 <div class="title">
+                   <h3>
+                     {block:Thumbnail}
+                       <a href="{URL}">
+                         <img src="{Thumbnail}" alt="{PhotoAlt}" style="width:128px; vertical-align:middle;" />
+                       </a>
+                     {/block:Thumbnail}
+                     <a href="{URL}">{Name}</a>
+                   </h3>
+                 </div>
+                 <div class="meta">
+                   <div class="fa fa-link" style="font-size:2em;"></div>
+                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
+                 </div>
+               </header>
+               {Description}
+               <footer>
+                 {block:More}
+                 <ul class="actions">
+                   <li><a href="{Permalink}" class="button big">Continue Reading</a></li>
+                 </ul>
+                 {/block:More}
+                 <ul class="stats">
+                   {block:HasTags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+                   {/block:HasTags}
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
+                   <li>{ReblogButton}</li>
+                 </ul>
+               </footer>
+               {block:PermalinkPage}
+                 {block:PostNotes}
+                 <div class="notes">
+                     {PostNotes}
+                 </div>
+                 {/block:PostNotes}
+               {/block:PermalinkPage}
+              </article>
+              {/block:Link}
 
               {block:Audio}
               <article class="post">
@@ -327,11 +362,10 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                    {block:PlayCount}<li>{PlayCount}</li>{/block:PlayCount}
                  </ul>
@@ -368,11 +402,10 @@
                  {/block:More}
                  <ul class="stats">
                    {block:HasTags}
-                   {block:Tags}
-                   <li><a href="{TagURL}">{Tag}</a></li>
-                   {/block:Tags}
+                    <li><strong>Tags: </strong></li>
+                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}{NoteCount}</li>
+                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
                    <li>{ReblogButton}</li>
                    <li>{PlayCount}</li>
                  </ul>
@@ -394,7 +427,7 @@
             <!-- Pagination -->
             {block:Pagination}
             <ul class="actions pagination">
-             <li>{block:PreviousPage}<a href="{PreviousPage}" class="disabled button big previous">Previous Page</a>{/block:PreviousPage}</li>
+             <li>{block:PreviousPage}<a href="{PreviousPage}" class="button big previous">Previous Page</a>{/block:PreviousPage}</li>
              <li>{CurrentPage} <span>of</span> {TotalPages}</li>
              <li>{block:NextPage}<a href="{NextPage}" class="button big next">Next Page</a>{/block:NextPage}</li>
             </ul>
