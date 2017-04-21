@@ -1656,6 +1656,8 @@
 			border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
 			display: block;
 			margin: 0 1.5em 0 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
 		}
 
 		.author img {
