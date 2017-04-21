@@ -111,7 +111,7 @@
                  </div>
                  <div class="meta">
                    <div class="fa fa-align-right" style="font-size:2em;"></div>
-                   <time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                   {block:Date}<time class="published" datetime="2015-11-01"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>{/block:Date}
                    <a href="{PostAuthorURL}" class="author"><span class="name">{PostAuthorName}</span><img src="{PostAuthorPortraitURL-128}" alt="" /></a>
                  </div>
                </header>
@@ -127,7 +127,7 @@
                     <li><strong>Tags: </strong></li>
                     {block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
                    {/block:HasTags}
-                   <li>{LikeButton}<span class="like_count"> {NoteCount}</span></li>
+                   {block:PostNotes}<li>{LikeButton}<span class="like_count">{NoteCount}</span></li>{/block:PostNotes}
                    <li>{ReblogButton}</li>
                  </ul>
                </footer>
@@ -299,7 +299,7 @@
               <article class="post">
                <header>
                  <div class="title">
-                   <h3>
+                   <h3 style="margin-bottom:2em;">
                      {block:Thumbnail}
                        <a href="{URL}">
                          <img src="{Thumbnail}" alt="{PhotoAlt}" style="width:128px; vertical-align:middle;" />
@@ -307,6 +307,7 @@
                      {/block:Thumbnail}
                      <a href="{URL}">{Name}</a>
                    </h3>
+                   {block:Excerpt}<p>{Excerpt}</p>{/block:Excerpt}
                  </div>
                  <div class="meta">
                    <div class="fa fa-link" style="font-size:2em;"></div>
