@@ -4,4 +4,4 @@
 ## Look at the [Preview](https://futureimperfect-theme.tumblr.com/)
 
 ## Screenshots
-![A little extract](https://raw.githubusercontent.com/giacomocerquone/FutureImperfect-TumblrTheme/master/screenshots/futureimperfect-screen.jpg | width=420)
+![A little extract](https://raw.githubusercontent.com/giacomocerquone/FutureImperfect-TumblrTheme/master/screenshots/futureimperfect-screen.jpg)
