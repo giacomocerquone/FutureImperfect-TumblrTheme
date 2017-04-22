@@ -4,5 +4,5 @@ To apply it you just have to "copy-and-paste" the content of [dist/index.html](h
 
 ## Screenshots
 <a href="https://raw.githubusercontent.com/giacomocerquone/FutureImperfect-TumblrTheme/master/screenshots/futureimperfect-screen.jpg" target="_blank">
-  <img src="https://raw.githubusercontent.com/giacomocerquone/FutureImperfect-TumblrTheme/master/screenshots/futureimperfect-screen.jpg width="450" />
+  <img src="https://raw.githubusercontent.com/giacomocerquone/FutureImperfect-TumblrTheme/master/screenshots/futureimperfect-screen.jpg" width="450" />
 </a>
