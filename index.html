@@ -60,8 +60,8 @@
 							<ul>
 								<li class="search">
 									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
+									<form id="search" method="get" action="/search">
+										<input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}..." />
 									</form>
 								</li>
 								<li class="menu">
@@ -101,6 +101,16 @@
 				<!-- Main -->
 					<div id="main">
 
+            {block:SearchPage}
+              {block:SearchResults}
+                <h1>{SearchResultCount} results for {SearchQuery}</h1>
+              {/block:SearchResults}
+
+              {block:NoSearchResults}
+                <h1>No search results for {SearchQuery}</h1>
+              {/block:NoSearchResults}
+            {/block:SearchPage}
+
             {block:Posts}
 
               {block:Regular}
@@ -136,7 +146,6 @@
                {/block:PermalinkPage}
               </article>
               {/block:Regular}
-
 
               {block:Chat}
               <article class="post">
