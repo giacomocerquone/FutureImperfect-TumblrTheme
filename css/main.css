@@ -2628,6 +2628,10 @@
 				width: 17em;
 			}
 
+			.post > header .meta > .fa {
+        margin-bottom: .5em;
+			}
+
 				.post > header .meta > * {
 					margin: 0 0 1em 0;
 				}
